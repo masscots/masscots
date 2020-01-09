@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scenario name="/home/episcilinux/Desktop/dev/CORE/CORE_test/BioAIR_2node_test.xml">
+  <networks>
+    <network id="5" name="wlan5" type="WIRELESS_LAN">
+      <position x="436" y="130" lat="47.57738205025134" lon="-122.12365486500607" alt="2.0"/>
+    </network>
+  </networks>
+  <devices>
+    <device id="1" name="n1" type="mdr">
+      <position x="70" y="379" lat="47.57407722886384" lon="-122.13100989453764" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv3MDR"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="2" name="n2" type="mdr">
+      <position x="800" y="379" lat="47.57396600556475" lon="-122.11645188147487" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv3MDR"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="3" name="n3" type="mdr">
+      <position x="100" y="250" lat="47.575813604319315" lon="-122.13038279352332" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv3MDR"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="4" name="n4" type="mdr">
+      <position x="210" y="200" lat="47.57647172114518" lon="-122.12817784127937" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv3MDR"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+  </devices>
+  <links>
+    <link node_one="5" node_two="1">
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:01:00" ip4="10.0.0.1" ip4_mask="24" ip6="2001::1" ip6_mask="128"/>
+      <options delay="0" bandwidth="0" per="0.0" dup="0" jitter="0" type="0" unidirectional="0"/>
+    </link>
+    <link node_one="5" node_two="2">
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:01:01" ip4="10.0.0.2" ip4_mask="24" ip6="2001::2" ip6_mask="128"/>
+      <options delay="0" bandwidth="0" per="0.0" dup="0" jitter="0" type="0" unidirectional="0"/>
+    </link>
+    <link node_one="5" node_two="3">
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:00" ip4="10.0.0.3" ip4_mask="24" ip6="2001::3" ip6_mask="128"/>
+      <options delay="0" bandwidth="0" per="0.0" dup="0" jitter="0" type="0" unidirectional="0"/>
+    </link>
+    <link node_one="5" node_two="4">
+      <interface_two id="0" name="eth0" mac="00:00:00:aa:00:01" ip4="10.0.0.4" ip4_mask="24" ip6="2001::4" ip6_mask="128"/>
+      <options delay="0" bandwidth="0" per="0.0" dup="0" jitter="0" type="0" unidirectional="0"/>
+    </link>
+  </links>
+  <mobility_configurations>
+    <mobility_configuration node="5" model="basic_range">
+      <configuration name="range" value="330."/>
+      <configuration name="bandwidth" value="54000000"/>
+      <configuration name="jitter" value="0"/>
+      <configuration name="delay" value="20000"/>
+      <configuration name="error" value="0"/>
+    </mobility_configuration>
+  </mobility_configurations>
+  <session_origin lat="47.5791667" lon="-122.132322" alt="2.0" scale="150.0"/>
+  <session_metadata>
+    <configuration name="canvas c1" value="{name {Canvas1}}"/>
+    <configuration name="global_options" value="interface_names=no ip_addresses=yes ipv6_addresses=yes node_labels=yes link_labels=yes show_api=no background_images=no annotations=yes grid=yes traffic_start=0"/>
+  </session_metadata>
+  <default_services>
+    <node type="mdr">
+      <service name="zebra"/>
+      <service name="OSPFv3MDR"/>
+      <service name="IPForward"/>
+    </node>
+    <node type="PC">
+      <service name="DefaultRoute"/>
+    </node>
+    <node type="prouter">
+      <service name="zebra"/>
+      <service name="OSPFv2"/>
+      <service name="OSPFv3"/>
+      <service name="IPForward"/>
+    </node>
+    <node type="router">
+      <service name="zebra"/>
+      <service name="OSPFv2"/>
+      <service name="OSPFv3"/>
+      <service name="IPForward"/>
+    </node>
+    <node type="host">
+      <service name="DefaultRoute"/>
+      <service name="SSH"/>
+    </node>
+  </default_services>
+</scenario>
