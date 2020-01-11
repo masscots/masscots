@@ -1,9 +1,8 @@
-# Gym-CORE wrapper (Progressing)
+# Gym-CORE wrapper
 
 ## Introduction
 
-A Gym-CORE wrapper for multi-drones reinforcemenet learning development.
-
+A Gym-CORE wrapper for multi-drones reinforcement learning development.
 
 
 ## Usage
